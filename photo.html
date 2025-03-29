@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yicing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'cjq7kyv',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>
+</head>
+<body id="photo">
+    <nav class="navbar">    
+        <p>yicing huang</p>
+        <br>
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="works.html">works</a>
+        <a href="photo.html">photography playground</a>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll("nav a");
+            const currentPage = document.body.id; 
+
+            links.forEach(link => {
+                if (link.getAttribute("href").includes(currentPage)) {
+                    link.textContent = `(${link.textContent})`; 
+                }
+            });
+        });
+        </script>
+        <a href="#contact" id="contact-link">contact</a>
+        <div id="contact-info" style="display: none; background-color: white; padding: 10px;">
+            <a href="mailto:yiching.h323@gmail.com">yiching.h323(at)gmail.com</a>
+            <a href="https://www.instagram.com/yiiixrc/" target="_blank">@yiiixrc</a>
+            <p>+358 45 273 2363</p>
+        </div>
+        <script>
+            document.getElementById('contact-link').addEventListener('click', function (event) {
+                event.preventDefault();
+                this.style.display = 'none';
+                document.getElementById('contact-info').style.display = 'block';
+            });
+
+            document.getElementById('contact-info').addEventListener('click', function (event) {
+                if (event.target.tagName === 'A') {
+                    return; 
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                const contactInfo = document.getElementById('contact-info');
+                const contactLink = document.getElementById('contact-link');
+
+                if (!contactInfo.contains(event.target) && event.target !== contactLink) {
+                    contactInfo.style.display = 'none';
+                    contactLink.style.display = 'block';
+                }
+            });
+        </script>
+    </nav>
+    <style>
+        .film-title,
+        .film-category,
+        .film-year {
+            display: table-row;
+            position: relative;
+            font-size: 11px;
+            line-height: 1.2;
+            font-family: "ibm-plex-sans-jp", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            text-decoration: none;
+        }
+
+        .film-container {
+            position: fixed;
+            top: 3rem;
+            right: 0%;
+            width: 80%;
+            height: calc(100vh - 2rem);
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, auto);
+            gap: 1.5rem;
+            row-gap: 3rem;
+            justify-items: center;
+            align-items: start;
+            padding-bottom: 3rem;
+        }
+
+        .zoomable {
+            width: 65%;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            position: relative;
+            cursor: crosshair;
+        }
+
+        .film-item {
+            position: relative;
+            width: 100%;
+            align-self: end;
+        }
+
+        .film-item.horizontal {
+            grid-column: span 1; 
+            right: 5%;
+            display: flex;
+            bottom: 2%;
+            align-self: end;
+        }
+
+        .film-item.horizontal .zoomable {
+            width: 80%;
+        }
+
+        .film-item.empty {
+            background: none; 
+        }
+
+        .film-text-1 {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 1px;
+            transform: translateY(5px); 
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay.active {
+            display: flex;
+        }
+
+        .overlay img {
+            width:auto;
+            height: 90vh;
+        }
+    </style>
+    <div class="overlay"></div>
+    <div class="film-container">
+        <div class="film-item">
+            <img class="zoomable" src="assets/image/film/reflect-1.webp" alt="reflection">
+            <!-- <div class="film-text-1">
+                <div class="film-category"><strong>Norway, Trondheim</strong></div>
+                <div class="film-category">35mm film, ILFORD DELTA DP 400</div>
+            </div> -->
+        </div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/reflect-2.webp" alt="reflection"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/reflect-3.webp" alt="reflection"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/reflect-4.webp" alt="reflection"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/reflect-5.webp" alt="reflection"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/reflect-7.webp" alt="reflection"></div>
+        <!-- <div class="film-item empty"></div>  -->
+        <div class="film-item horizontal"><img class="zoomable" src="assets/image/film/reflect-8.webp" alt="reflection"></div>
+        <div class="film-item horizontal"><img class="zoomable" src="assets/image/film/reflect-9.webp" alt="reflection"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-18.webp" alt="photo"></div>
+        <!-- <div class="film-item"><img class="zoomable" src="assets/image/film/photo-2.webp" alt="photo"></div> -->
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-3.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-4.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-5.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-6.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-7.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-8.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-9.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-10.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-11.webp" alt="photo"></div>
+        <!-- <div class="film-item"><img class="zoomable" src="assets/image/film/photo-12.webp" alt="photo"></div> -->
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-13.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-14.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-15.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-16.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-17.webp" alt="photo"></div>
+        <div class="film-item"><img class="zoomable" src="assets/image/film/photo-1.webp" alt="photo"></div>
+
+        </div>
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const zoomableImages = document.querySelectorAll(".zoomable");
+            const overlay = document.querySelector(".overlay");
+
+            zoomableImages.forEach(img => {
+                img.addEventListener("click", function () {
+                    const clonedImg = this.cloneNode();
+                    overlay.innerHTML = '';
+                    overlay.appendChild(clonedImg);
+                    overlay.classList.add("active");
+                });
+            });
+
+            overlay.addEventListener("click", function () {
+                overlay.classList.remove("active");
+                overlay.innerHTML = '';
+            });
+        });
+    </script>
+</body>
+</html>

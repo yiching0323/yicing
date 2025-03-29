@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yicing</title>
+    <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'cjq7kyv',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
+</head>
+<body id="index" class="index-page">
+    <nav class="navbar">
+        <p>yicing huang</p>
+        <br>
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="works.html">works</a>
+        <a href="photo.html">photography playground</a>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll("nav a");
+            const currentPage = document.body.id; 
+
+            links.forEach(link => {
+                if (link.getAttribute("href").includes(currentPage)) {
+                    link.textContent = `(${link.textContent})`; 
+                }
+            });
+        });
+        </script>
+        <a href="#contact" id="contact-link">contact</a>
+        <div id="contact-info" style="display: none; background-color: white; padding: 10px;">
+            <a href="mailto:yiching.h323@gmail.com">yiching.h323(at)gmail.com</a>
+            <a href="https://www.instagram.com/yiiixrc/" target="_blank">@yiiixrc</a>
+            <p>+358 45 273 2363</p>
+        </div>
+        <script>
+            document.getElementById('contact-link').addEventListener('click', function (event) {
+                event.preventDefault();
+                this.style.display = 'none';
+                document.getElementById('contact-info').style.display = 'block';
+            });
+
+            document.getElementById('contact-info').addEventListener('click', function (event) {
+                if (event.target.tagName === 'A') {
+                    return; 
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                const contactInfo = document.getElementById('contact-info');
+                const contactLink = document.getElementById('contact-link');
+
+                if (!contactInfo.contains(event.target) && event.target !== contactLink) {
+                    contactInfo.style.display = 'none';
+                    contactLink.style.display = 'block';
+                }
+            });
+        </script>
+    </nav>
+    <canvas id="fullcanvas"></canvas>
+    <script src="script_home.js"></script>
+</body>
+</html>

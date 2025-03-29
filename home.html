@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yicing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body id="home">
+    <nav class="navbar">    
+        <p>yicing huang</p>
+        <br>
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="works.html">works</a>
+        <a href="photo.html">photography playground</a>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll("nav a");
+            const currentPage = document.body.id; 
+
+            links.forEach(link => {
+                if (link.getAttribute("href").includes(currentPage)) {
+                    link.textContent = `(${link.textContent})`; 
+                }
+            });
+        });
+        </script>
+        <a href="#contact" id="contact-link">contact</a>
+        <div id="contact-info" style="display: none; background-color: white; padding: 10px;">
+            <p>yiching.h323(at)gmail.com</p>
+            <p>@yiiixrc</p>
+            <p>+358 45 273 2363</p>
+        </div>
+        <script>
+            document.getElementById('contact-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('contact-info').style.display = 'block';
+            });
+
+            document.getElementById('contact-info').addEventListener('click', function() {
+            this.style.display = 'none';
+            document.getElementById('contact-link').style.display = 'block';
+            });
+        </script>
+    </nav>
+    <script src="script_home.js"></script>
+</body>
+</html>

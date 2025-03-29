@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yicing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'cjq7kyv',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
+</head>
+<body id="work">
+    <nav class="navbar">    
+        <p>yicing huang</p>
+        <br>
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="works.html">works</a>
+        <a href="photo.html">photography playground</a>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll("nav a");
+            const currentPage = document.body.id; 
+
+            links.forEach(link => {
+                if (link.getAttribute("href").includes(currentPage)) {
+                    link.textContent = `(${link.textContent})`; 
+                }
+            });
+        });
+        </script>
+        <a href="#contact" id="contact-link">contact</a>
+        <div id="contact-info" style="display: none; background-color: white; padding: 10px;">
+            <a href="mailto:yiching.h323@gmail.com">yiching.h323(at)gmail.com</a>
+            <a href="https://www.instagram.com/yiiixrc/" target="_blank">@yiiixrc</a>
+            <p>+358 45 273 2363</p>
+        </div>
+        <script>
+            document.getElementById('contact-link').addEventListener('click', function (event) {
+                event.preventDefault();
+                this.style.display = 'none';
+                document.getElementById('contact-info').style.display = 'block';
+            });
+
+            document.getElementById('contact-info').addEventListener('click', function (event) {
+                if (event.target.tagName === 'A') {
+                    return; 
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                const contactInfo = document.getElementById('contact-info');
+                const contactLink = document.getElementById('contact-link');
+
+                if (!contactInfo.contains(event.target) && event.target !== contactLink) {
+                    contactInfo.style.display = 'none';
+                    contactLink.style.display = 'block';
+                }
+            });
+        </script>
+    </nav>
+    <div class="work-index">
+        <div class="work-row noLink" data-number="1">
+            <p class="number">01</p>
+            <div class="work-item"><strong>Syst'aime</strong></div>
+            <div class="work-category">Printmaking</div>
+            <div class="work-year">2022</div>
+            <div class="work-description 1">
+                <p><strong>戀愛體誌&nbsp;&nbsp;Syst'aime</strong></p>
+                <br>
+                <p>is a satirical tabloid that chronicles materialized relationships in modern society through the lens of a fictional journalist. By presenting four headline stories and twelve physical evidences, it reveals the contradictions between secular rules and romantic feelings shaped by hidden values and societal norms.</p>
+                <!-- <p>Through sharp observation of various relationships, the tabloid highlights how today’s capitalist values interfere with personal connections, inviting readers to reconsider how love is validated in this era.</p> -->
+                <br>
+                <p>20 pages, 22x17, screen printing</p>
+                <p>Winner, Red Dot Design Award 2022</p>
+                <br>
+                <p><strong>Category</strong> / print, behavioral design, satirical design</p>
+            </div>
+            <img src="assets/image/systaime-1.webp" alt="Syst'aime" class="hover-image systaime-1">
+            <!-- <img src="assets/image/systaime-2.webp" alt="Syst'aime" class="hover-image systaime-2"> -->
+            <img src="assets/image/systaime-5.webp" alt="Syst'aime" class="hover-image systaime-5">
+            <img src="assets/image/systaime-7.webp" alt="Syst'aime" class="hover-image systaime-7">
+            <img src="assets/image/systaime-8.webp" alt="Syst'aime" class="hover-image systaime-8">
+            <img src="assets/image/systaime-10.webp" alt="Syst'aime" class="hover-image systaime-10">
+            <img src="assets/image/systaime-3.webp" alt="Syst'aime" class="hover-image systaime-3">
+            <img src="assets/image/systaime-4.webp" alt="Syst'aime" class="hover-image systaime-4">
+            <img src="assets/image/systaime-6.webp" alt="Syst'aime" class="hover-image systaime-6">
+            <img src="assets/image/systaime-9.webp" alt="Syst'aime" class="hover-image systaime-9">
+            <img src="assets/image/systaime-11.webp" alt="Syst'aime" class="hover-image systaime-11">
+            <img src="assets/image/sys-bank.png" alt="Syst'aime" class="hover-image sys-bank">
+            <img src="assets/image/sys-flyer.png" alt="Syst'aime" class="hover-image sys-flyer">
+            <img src="assets/image/sys-invoice.png" alt="Syst'aime" class="hover-image sys-invoice">
+            <img src="assets/image/sys-yellow.png" alt="Syst'aime" class="hover-image sys-yellow">
+            <img src="assets/image/sys-rose.png" alt="Syst'aime" class="hover-image sys-rose">
+            <img src="assets/image/sys-IOU.png" alt="Syst'aime" class="hover-image sys-IOU">
+            <img src="assets/image/sys-photo.png" alt="Syst'aime" class="hover-image sys-photo">
+            <img src="assets/image/sys-glove.png" alt="Syst'aime" class="hover-image sys-glove">
+
+
+
+
+        </div>
+
+        <div class="work-row noLink" data-number="2">
+            <p class="number">02</p>
+            <div class="work-item"><strong>Treasure Zone</strong></div>
+            <div class="work-category">Brand Identity</div>
+            <div class="work-year">2021</div>
+            <div class="work-description 2">
+                <p><strong>尋聚地&nbsp;&nbsp;Treasure Zone</strong></p>
+                <br>
+                <p>is the theme of the Taipei Toys Festival, transforming the exhibition into an undefined conceptual space, where the exhibits become hidden treasures. Playful symbols are used to represent the acts of searching, gathering, and the divergence of signals, suggesting that the possibilities are as limitless as the creativity and imagination of the visitors.</p>
+                <br>
+                <br>
+                <p>Category / branding, visual identity design, motion design</p>
+            </div>
+            <video src="assets/video/treasure.mp4" controls autoplay loop class="hover-video treasure"></video>
+            <img src="assets/image/treasure-1.jpg" alt="Treasure Zone" class="hover-image treasure-1">
+            <img src="assets/image/treasure-2.jpg" alt="Treasure Zone" class="hover-image treasure-2">
+            <!-- <img src="assets/image/treasure-4.jpg" alt="Treasure Zone" class="hover-image treasure-4"> -->
+            <img src="assets/image/treasure-5.jpg" alt="Treasure Zone" class="hover-image treasure-5">
+            <img src="assets/image/treasure-3.jpg" alt="Treasure Zone" class="hover-image treasure-3">
+            <!-- <img src="assets/image/treasure-6.jpg" alt="Treasure Zone" class="hover-image treasure-6"> -->
+        </div>
+
+        <div class="work-row noLink" data-number="3">
+            <p class="number">03</p>
+            <div class="work-item"><strong>Taipei Girls' High School</strong></div>
+            <div class="work-category">Brand Identity</div>
+            <div class="work-year">2021</div>
+            <div class="work-description 3">
+                <p><strong>Taipei Girls' High School</strong></p>
+                <br>
+                <p>is the most prestigious and historically significant girls' high school in Taiwan, established in 1904. By redesigning its visual system, the aim is to alleviate the public's perception of the school's conservative image and make its brand more vibrant and lively. The supporting graphics are inspired by the school's architectural features from the Japanese colonial period, while maintaining the iconic uniform color as the primary color scheme.</p>
+                <br>
+                <br>
+                <p>Category / branding, visual identity design</p>
+            </div>
+            <img src="assets/image/tfg-0.webp" alt="Taipei Girls' High School" class="hover-image tfg-0">
+            <img src="assets/image/tfg-1.webp" alt="Taipei Girls' High School" class="hover-image tfg-1">
+            <img src="assets/image/tfg-2.webp" alt="Taipei Girls' High School" class="hover-image tfg-2">
+            <img src="assets/image/tfg-3.webp" alt="Taipei Girls' High School" class="hover-image tfg-3">
+            <img src="assets/image/tfg-4.webp" alt="Taipei Girls' High School" class="hover-image tfg-4">
+            <img src="assets/image/tfg-5.webp" alt="Taipei Girls' High School" class="hover-image tfg-5">
+            <img src="assets/image/tfg-6.webp" alt="Taipei Girls' High School" class="hover-image tfg-6">
+            <img src="assets/image/tfg-7.webp" alt="Taipei Girls' High School" class="hover-image tfg-7">
+            <img src="assets/image/tfg-10.jpg" alt="Taipei Girls' High School" class="hover-image tfg-10">
+            <img src="assets/image/tfg-11.webp" alt="Taipei Girls' High School" class="hover-image tfg-11">
+            <img src="assets/image/tfg-12.webp" alt="Taipei Girls' High School" class="hover-image tfg-12">
+            <img src="assets/image/tfg-13.webp" alt="Taipei Girls' High School" class="hover-image tfg-13">
+            <img src="assets/image/tfg-14.webp" alt="Taipei Girls' High School" class="hover-image tfg-14">
+            <img src="assets/image/tfg-9.webp" alt="Taipei Girls' High School" class="hover-image tfg-9">
+            <img src="assets/image/tfg-8.jpg" alt="Taipei Girls' High School" class="hover-image tfg-8">
+        </div>
+
+        <div class="work-row noLink" data-number="4">
+            <p class="number">04</p>
+            <div class="work-item"><strong>Into the Unknown</strong></div>
+            <div class="work-category">Poster</div>
+            <div class="work-year">2023</div>
+            <div class="work-description 4">
+                <p><strong>美麗新世界&nbsp;&nbsp;Into the Unknown</strong></p>
+                <br>
+                <p>is a sentimental short film that revolves around Gao, a female worker in a textile factory, who dreams of becoming a pastry chef. Outside of her work, Gao strives to save her wages to afford ingredients for her baking practice. As she navigates this journey, her heart is torn between the looming presence of a factory supervisor and the enduring companionship of a childhood friend, each person offering a different form of love that she hopes will fill the emptiness within her.</p>
+                <br>
+                <br>
+                <p>TNUA Department of Filmmaking Graduation Project</p>
+                <p>Director/ Shih Jia, Huang</p>
+            </div>
+            <img src="assets/image/unknown-1.webp" alt="Swimming in the Dark" class="hover-image unknown-1">
+            <img src="assets/image/unknown-2.webp" alt="Swimming in the Dark" class="hover-image unknown-2">
+            <img src="assets/image/unknown-3.png" alt="Swimming in the Dark" class="hover-image unknown-3">
+        </div>
+
+        <div class="work-row noLink" data-number="5">
+            <p class="number">05</p>
+            <div class="work-item"><strong>Swimming in the Dark</strong></div>
+            <div class="work-category">Poster</div>
+            <div class="work-year">2022</div>
+            <div class="work-description 5">
+                <p><strong>悄悄告訴她&nbsp;&nbsp;Swimming in the Dark</strong></p>
+                <br>
+                <p>is a self-exploration-themed, award-winning short film that takes place in this gloomy, sweaty summer. As the swimming competition approaches, Wen feels more and more pressure. As one of her intimates, Wen's friend Ann notices something is different. To confront Wen's self-confinement, isolation, and trauma, Ann decides to get closer to Wen. But each move seems to push them further away from each other.</p>
+                <br>
+                <br>
+                <p>Taiwan Public Television Service Innovative Story</p>
+                <p>Director/ Pin Chen</p>
+            </div>
+            <img src="assets/image/swimming-1.webp" alt="Swimming in the Dark" class="hover-image swimming-1">
+            <img src="assets/image/swimming-2.webp" alt="Swimming in the Dark" class="hover-image swimming-2">
+            <img src="assets/image/swimming-3.png" alt="Swimming in the Dark" class="hover-image swimming-3">
+        </div>
+
+        <div class="work-row noLink" data-number="6">
+            <p class="number">06</p>
+            <div class="work-item"><strong>NTU Film Festival Workshop</strong></div>
+            <div class="work-category">Event Key Visual</div>
+            <div class="work-year">2023</div>
+            <div class="work-description 6">
+                <p><strong>NTU Film Festival Workshop</strong></p>
+                <br>
+                <p>is a student-centered event that invites renowned filmmakers from various genres in Taiwan. The series offers a range of lectures and workshops, providing a stepping stone into the world of cinema and animation for all young people interested in this field.</p>
+                <br>
+                <br>
+                <p>Category / event branding, visual identity design</p>
+            </div>
+            <img src="assets/image/ntu-1.webp" alt="NTU Film Festival Workshop" class="hover-image ntu-1">
+            <img src="assets/image/ntu-2.webp" alt="NTU Film Festival Workshop" class="hover-image ntu-2">
+            <img src="assets/image/ntu-3.webp" alt="NTU Film Festival Workshop" class="hover-image ntu-3">
+            <img src="assets/image/ntu-4.webp" alt="NTU Film Festival Workshop" class="hover-image ntu-4">
+            <img src="assets/image/ntu-5.webp" alt="NTU Film Festival Workshop" class="hover-image ntu-5">
+            <img src="assets/image/ntu-6.webp" alt="NTU Film Festival Workshop" class="hover-image ntu-6">
+        </div>
+
+        <div class="work-row link" data-number="7">
+            <p class="number">07</p>
+            <a href="https://editor.p5js.org/yicingh/full/w-uGW6FZD" class="work-item"><strong>Thoughts in the Sky</strong></a>
+            <div class="work-category">Creative Coding</div>
+            <div class="work-year">2024</div>
+            <div class="work-description 6">
+                <p><strong>Thoughts in the Sky</strong></p>
+                <br>
+                <p>is an interactive website that creates an environment for uploading your thoughts into the air. When you casually stroll down the road alone, where do your thoughts go? The words that dance through your mind seem to dissolve into the air, light as bubbles, floating up to join the clouds. They drift in silence, playing with the wind, forming fleeting shapes against the sky, as if the world itself becomes a canvas for your inner dialogue.</p>
+                <br>
+                <br>
+                <!-- <p>p5.js, HTML, CSS</p> -->
+                <p>Category / creative coding, interaction design</p>
+            </div>
+            <video src="assets/video/thoughts.mp4" controls autoplay loop class="hover-video thoughts"></video>
+            <video src="assets/video/thoughts-3.mp4" controls autoplay loop class="hover-video thoughts-3"></video>
+            <img src="assets/image/thoughts-1.png" alt="Thoughts in the Sky" class="hover-image thoughts-1">
+            <img src="assets/image/thoughts-2.png" alt="Thoughts in the Sky" class="hover-image thoughts-2">
+        </div>
+
+        <div class="work-row link" data-number="8">
+            <p class="number">08</p>
+            <a href="https://distance-of-missing.glitch.me/" class="work-item"><strong>The Distance of Missing</strong></a>
+            <div class="work-category">Creative Coding</div>
+            <div class="work-year">2024</div>
+            <div class="work-description 8">
+                <p><strong>The Distance of Missing</strong></p>
+                <br>
+                <p>is a conceptual data display website that builds upon a real-world database of airlines and airport locations, weaving together routes that span the globe and cross hemispheres. It captures the journey of how people, scattered across vast distances, find their way back to the places they once called home, reconnecting with their lost sense of belonging. This project offers a poetic narrative of movement and the connections between humans and places.</p>
+                <br>
+                <br>
+                <!-- <p>d3.js, HTML, CSS</p> -->
+                <p>Category / creative coding, data visualization, interaction design</p>
+            </div>
+            <video src="assets/video/distance-1.mp4" controls autoplay loop class="hover-video distance-1"></video>
+            <video src="assets/video/distance-2.mp4" controls autoplay loop class="hover-video distance-2"></video>
+            <img src="assets/gif/distance-3.gif" alt="Thoughts in the Sky" class="hover-image distance-3">
+            <img src="assets/gif/distance-4.gif" alt="Thoughts in the Sky" class="hover-image distance-4">
+            <img src="assets/gif/distance-5.gif" alt="Thoughts in the Sky" class="hover-image distance-5">
+            <!-- <img src="assets/gif/distance-6.gif" alt="Thoughts in the Sky" class="hover-image distance-6"> -->
+            <img src="assets/gif/distance-7.gif" alt="Thoughts in the Sky" class="hover-image distance-7">
+            <img src="assets/gif/distance-8.gif" alt="Thoughts in the Sky" class="hover-image distance-8">
+            <img src="assets/gif/distance-9.gif" alt="Thoughts in the Sky" class="hover-image distance-9">
+            <img src="assets/gif/distance-10.gif" alt="Thoughts in the Sky" class="hover-image distance-10">
+            <img src="assets/gif/distance-11.gif" alt="Thoughts in the Sky" class="hover-image distance-11">
+        </div>
+
+        <div class="work-row link" data-number="9">
+            <p class="number">09</p>
+            <a href="https://editor.p5js.org/yicingh/full/74pcHROs1" class="work-item"><strong>Archaeology of Memory</strong></a>
+            <div class="work-category">Creative Coding</div>
+            <div class="work-year">2024</div>
+            <div class="work-description 9">
+                <p><strong>Archaeology of Memory</strong></p>
+                <br>
+                <p>is a digital project that begins with an exploration of the word "archive." One lesser-known but valid definition is "a complete record of data stored on an infrequently used medium." Drawing a parallel to memory storage, both safeguard fleeting moments—fading over time yet waiting to be rediscovered. Through a visual narrative, this project captures the randomness and transient nature of memories, echoing the delicate, ephemeral essence of an analog photography archive.
+                </p>
+                <br>
+                <br>
+                <p>Category / creative coding, interaction design</p>
+            </div>
+            <video src="assets/video/archive-1.mp4" controls autoplay loop class="hover-video archive-1"></video>
+            <video src="assets/video/archive-2.mp4" controls autoplay loop class="hover-video archive-2"></video>
+            <video src="assets/video/archive-3.mp4" controls autoplay loop class="hover-video archive-3"></video>
+            <img src="assets/image/archive-1.webp" alt="Archaeology of Memory" class="hover-image archive-1">
+            <img src="assets/image/archive-2.webp" alt="Archaeology of Memory" class="hover-image archive-2">
+        </div>
+    </div>
+</body>
+</html>
