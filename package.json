@@ -1,0 +1,23 @@
+{
+  "name": "yicing-website",
+  "version": "1.0.0",
+  "description": "A personal portfolio website for Yicing Huang.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=14.x"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "express",
+    "glitch"
+  ],
+  "author": "Yicing Huang",
+  "license": "MIT"
+}

@@ -31,8 +31,8 @@ body.about-page {
 
 .navbar {
     display: block;
-    margin-top: 10px;
-    margin-left: 10px;
+    margin-top: 1%;
+    margin-left: 1%;
     line-height: 1.2;
     position: fixed;
 }
@@ -42,7 +42,7 @@ body.about-page {
     display: block;
     color: black;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
     font-family: "ibm-plex-sans-jp", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -77,8 +77,8 @@ body.about-page {
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-left: 12%;
-    margin-right: 10px;
+    margin-left: 17%;
+    width: 30%;
     margin-top: 1%;
     position: relative;
 }
@@ -89,7 +89,7 @@ body.about-page {
 }
 
 .about-image-container img {
-    width: 130px; 
+    width: 60%; 
     height: auto;
 }
 
@@ -135,10 +135,14 @@ body.about-page {
 }
 
 .work-index {
-    position: absolute;
+    position: relative;
     display: table;
-    margin-left: 20%;
-    margin-top: 3%;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 15%;
+    width: 40%;
+    max-width: 1000px;
+    padding: 1rem;
     border-spacing: 5px;
 }
 
@@ -146,29 +150,7 @@ body.about-page {
     display: table-row;
     position: relative;
     color: black; 
-}
-
-.work-row.link {
-    cursor: pointer; 
-    position: relative; 
-}
-
-/* .work-row.link:hover::after {
-    content: "↗";
-    position: absolute;
-    top: 50%;
-    left: 27%;
-    transform: translateY(-50%); 
-    color: black;
-    font-size: 15px;
-    font-family: "ibm-plex-sans-jp", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    white-space: nowrap; 
-} */
-
-.work-row.noLink {
-    cursor: default;
+    cursor: default; 
 }
 
 .work-row:hover .hover-image {
@@ -181,18 +163,31 @@ body.about-page {
 .work-description {
     display: none;
     position: fixed;
-    top: 6%;
+    top: 5%;
     left: 63%;
     right: 3%;
     z-index: 1000; 
+    cursor: default;
 
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.25;
     font-family: "ibm-plex-sans-jp", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: black;
     text-decoration: none;
+}
+
+.work-row.active .work-description {
+    display: block;
+}
+
+.work-row.active .hover-image {
+    display: block;
+}
+
+.work-row.active .hover-video {
+    display: block; 
 }
 
 .work-row .work-item,
@@ -232,7 +227,6 @@ body.about-page {
 .work-item, .work-category, .work-year{
     display: table-cell;
     vertical-align: top;
-    padding-right: 100px;
 
     font-size: 12px;
     line-height: 1;
@@ -242,11 +236,15 @@ body.about-page {
     text-decoration: none;
 }
 
+.work-item {
+    cursor: pointer;
+}
+
 .hover-image {
+    display: none;
     position: fixed;
     bottom: 0;
     right: 0;
-    display: none;
     width: 200px;
     height: auto;
 }
@@ -761,104 +759,95 @@ body.about-page {
     border-radius: 5px;
 }
 
+.hover-video.verta-1 {
+    bottom: 4%; 
+    left: -1%; 
+    width: 25%; 
+}
+
+.hover-image.verta-2 {
+    bottom: 36%; 
+    left: 4%; 
+    width: 10%; 
+}
+
+.hover-image.verta-3 {
+    bottom: 5%; 
+    right: 7%; 
+    width: 9.5%; 
+}
+
+.hover-image.verta-4 {
+    bottom: 5%; 
+    right: 18%; 
+    width: 19.65%; 
+}
+
+.hover-video.verta-5 {
+    bottom: -6.5%; 
+    left: 23%; 
+    width: 37%; 
+}
 
 
-/* Mobile version styles */
-@media (max-width: 768px) {
-    html, body {
-        overflow-x: hidden; 
-    }
-
-    .navbar {
-        margin-top: 5px;
-        margin-left: 5px;
-        font-size: 10px; 
-    }
-
-    .navbar a,
-    .navbar p {
-        font-size: 10px; 
-        line-height: 1.5; 
-    }
-
-    .film-container {
-        width: 100%;
-        height: auto;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-    .zoomable {
-        width: 90%; 
-    }
-
-    .about-content {
-        flex-direction: column;
-        margin: 0;
-    }
-
-    .about-image-container {
-        margin: 0 auto;
-        margin-bottom: 1rem;
-    }
-
-    .about-image-container img {
-        width: 100px; 
-        height: auto;
-    }
-
-    .about-text-container {
-        margin-left: 40%;
-        padding: 1rem;
-    }
-
-    .about-text p,
-    .education-text p,
-    .exhibtion-text p {
-        font-size: 10px;
-        line-height: 1.4;
-    }
-
-    .work-index {
-        margin: 0 auto;
-        left: 30%;
-        width: 100%;
-        padding: 1rem;
-    }
-
-    .work-row {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 1rem;
-    }
-
-    .work-item, .work-category, .work-year {
-        padding-right: 0;
-        font-size: 10px;
-    }
-
-    .hover-image {
-        width: 100%;
-        height: auto;
-    }
-
-    .hover-video {
-        width: 100%;
-        height: auto;
-    }
-
-    #contact-info {
-        font-size: 10px;
-        padding: 0.5rem;
-    }
-
-    #fullcanvas {
-        width: 100%;
-        height: 100%;
-    }
+.copyright {
+    position: fixed;
+    bottom: 1%;
+    left: 1%;
+    width: 100%;
+    font-size: 10px;
+    font-family: "ibm-plex-sans-jp", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
 }
 
 
 
+/* Mobile version styles */
+@media (max-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: white;
+        text-align: center;
+    }
+
+    body::before {
+        content: "Oops! This site only works on desktop at the moment — please check it out there!";
+        font-size: 14px;
+        font-family: "ibm-plex-sans-jp", sans-serif;
+        font-weight: 800;
+        font-style: italic;
+        color: black;
+        position: absolute;
+        line-height: 1.2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    .work-index,
+    .work-row,
+    .work-description,
+    .hover-image,
+    .hover-video,
+    .work-item,
+    .work-category,
+    .work-year,
+    .number,
+    .about-content,
+    .about-image-container,
+    .about-text-container,
+    .about-text,
+    .education-text,
+    .exhibtion-text,
+    .navbar,
+    #contact-info {
+        display: none; /* Hide all other content */
+    }
+}

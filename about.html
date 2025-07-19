@@ -28,7 +28,7 @@
         <a href="index.html">home</a>
         <a href="about.html">about</a>
         <a href="works.html">works</a>
-        <a href="photo.html">photography playground</a>
+        <a href="photo_2.html">photography playground</a>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
             const links = document.querySelectorAll("nav a");
@@ -73,7 +73,7 @@
     </nav>
     <div class="about-content">
         <div class="about-image-container">
-                <img id="profile-photo" src="assets/image/about_1.webp" alt="profile photo">
+                <img id="profile-photo" src="public/image/about_1.webp" alt="profile photo">
                 <!-- <canvas id="imageCanvas"></canvas> -->
             </div>
     <div class="about-text-container">
@@ -146,6 +146,7 @@
     </div>
 </div>
 </div>
+    <p class="copyright">©&nbsp;2025&nbsp;&nbsp;Yicing Huang</p>
 <script>
    document.addEventListener("DOMContentLoaded", function () {
     const img = document.getElementById('profile-photo');
@@ -203,8 +204,10 @@
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const windowHeight = window.innerHeight;
             const bottomOfScroll = aboutTextContainer.clientHeight;
+            const containerRect = imageContainer.getBoundingClientRect();
 
-            if (x + imgWidth > window.innerWidth - aboutTextContainer.clientWidth - imgWidth - 100) {
+            if (x + imgWidth > containerRect.right + imgWidth) {
+                x = containerRect.right;
                 dx = -dx;
             }
 

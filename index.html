@@ -24,18 +24,89 @@
         <a href="index.html">home</a>
         <a href="about.html">about</a>
         <a href="works.html">works</a>
-        <a href="photo.html">photography playground</a>
+        <a href="photo_2.html">photography playground</a>
         <script>
-            document.addEventListener("DOMContentLoaded", function () {
-            const links = document.querySelectorAll("nav a");
-            const currentPage = document.body.id; 
+        document.addEventListener("DOMContentLoaded", function () {
+          const links = document.querySelectorAll("nav a");
+          const currentPage = document.body.id;
 
-            links.forEach(link => {
-                if (link.getAttribute("href").includes(currentPage)) {
-                    link.textContent = `(${link.textContent})`; 
-                }
-            });
+          links.forEach((link) => {
+            if (link.getAttribute("href").includes(currentPage)) {
+              link.textContent = `(${link.textContent})`;
+            }
+          });
         });
+        if (window.innerWidth >= 768) {
+          const hint = document.createElement("p");
+          hint.textContent = "Draw and Click!";
+          hint.style.position = "absolute";
+          hint.style.top = window.innerHeight / 2 + "px";
+          hint.style.left = window.innerWidth / 2 + "px";
+          hint.style.fontSize = "13.5px";
+          (hint.style.fontFamily = "ibm-plex-sans-jp"), "sans-serif";
+          hint.style.fontWeight = "bold";
+          hint.style.color = getRandomColor();
+          document.body.appendChild(hint);
+
+          function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+              color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+          }
+
+          setInterval(() => {
+            hint.style.color = getRandomColor();
+          }, 500);
+
+          let rect = hint.getBoundingClientRect();
+          let x = rect.left;
+          let y = rect.top;
+
+          let dx = (Math.random() < 0.5 ? -1 : 1) * 0.8;
+          let dy = (Math.random() < 0.5 ? -1 : 1) * 0.8;
+
+          const hintWidth = rect.width;
+          const hintHeight = rect.height;
+          const navbar = document.querySelector(".navbar");
+          const navbarRect = navbar.getBoundingClientRect();
+
+          function moveHint() {
+            x += dx;
+            y += dy;
+
+            if (
+              x + hintWidth > window.innerWidth ||
+              x < 1.4 * navbarRect.width
+            ) {
+              dx = -dx;
+            }
+
+            if (y + hintHeight > window.innerHeight || y < 0) {
+              dy = -dy;
+            }
+
+            hint.style.left = x + "px";
+            hint.style.top = y + "px";
+
+            requestAnimationFrame(moveHint);
+          }
+
+        moveHint();
+
+        document.addEventListener(
+          "click",
+          function () {
+            if (hint.parentNode) {
+              hint.parentNode.removeChild(hint);
+            }
+          },
+          { once: true }
+        );
+        }
+            
         </script>
         <a href="#contact" id="contact-link">contact</a>
         <div id="contact-info" style="display: none; background-color: white; padding: 10px;">
@@ -67,7 +138,14 @@
             });
         </script>
     </nav>
+    <p class="copyright">©&nbsp;2025&nbsp;&nbsp;Yicing Huang</p>
     <canvas id="fullcanvas"></canvas>
-    <script src="script_home.js"></script>
+    <script>
+        if (window.innerWidth >= 768) {
+            const script = document.createElement("script");
+            script.src = "script_home.js";
+            document.head.appendChild(script);
+        }
+    </script>
 </body>
 </html>
