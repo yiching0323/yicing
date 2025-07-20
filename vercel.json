@@ -1,7 +1,5 @@
 {
   "builds": [
-    { "src": "about.html", "use": "@vercel/static" }
-    { "src": "photo_2.html", "use": "@vercel/static" },
-    { "src": "works.html", "use": "@vercel/static" }
+    { "src": "**", "use": "@vercel/static" }
   ]
 }
